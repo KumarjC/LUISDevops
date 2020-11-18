@@ -1,0 +1,47 @@
+
+> LUIS application information
+> !# @app.name = FlightBooking
+> !# @app.versionId = 0.1
+> !# @app.culture = en-us
+> !# @app.luis_schema_version = 7.0.0
+> !# @app.tokenizerVersion = 1.0.0
+
+> # Intent definitions
+
+## Amend a Booking
+- i want to change my flight
+- want to change booking ref {flight booking number}
+- want to change flight for ref {flight booking number}
+- want to change my booking
+
+## Create a Booking
+- i have to go to new york
+- i need a flight from new york
+- i need a flight ticket on dec 30
+- i want to book a flight
+- i want to book a flight ticket
+- i want to book a ticket
+- i want to go from london to new york
+- i want to go from london to new york on dec 30
+- i want to go to new york on dec 30
+- [book] [a] (flight|ticket[s]|flight ticket) to [geographyv2]
+- [book] [a] (flight|ticket[s]|flight ticket) on {@datetimeV2} [on {datetimeV2}]
+- book flight from {@geographyV2} to {geographyV2}
+
+## None
+
+> # Entity definitions
+
+> # PREBUILT Entity definitions
+
+@ prebuilt datetimeV2
+
+@ prebuilt geographyV2
+
+> # Phrase list definitions
+
+> # List entities
+
+> # RegEx entities
+
+@ regex "Flight Booking Number" = /[A-Za-z]{1,2}[0-9]{2,7}/
